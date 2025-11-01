@@ -20,6 +20,6 @@ public class Operations {
         objectMapper.writeValue(
                 new File(String.format("target/tasks/{}", nTasks.toString())),
                 taskJson
-        );
+        )
     }
 }
