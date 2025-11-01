@@ -1,10 +1,12 @@
+package com.asif196.TaskTracker;
+
 import java.util.*;
 
 public class Utils {
     private static final Map<String, Integer[]> operationArgumentCount;
     private static final Set<String> availableOperations;
     static {
-        operationArgumentCount = new HashMap<String, Integer[]>();
+        operationArgumentCount = new HashMap<>();
         operationArgumentCount.put("update", new Integer[]{2, 2});
         operationArgumentCount.put("add", new Integer[]{1, 1});
         operationArgumentCount.put("delete", new Integer[]{1, 1});
@@ -12,7 +14,7 @@ public class Utils {
         operationArgumentCount.put("mark-done", new Integer[]{1, 1});
         operationArgumentCount.put("list", new Integer[]{0, 1});
 
-        availableOperations = new HashSet<String>(
+        availableOperations = new HashSet<>(
                 Set.of("update", "add", "delete", "mark-in-progress", "mark-done", "list")
         );
     }
@@ -24,7 +26,7 @@ public class Utils {
             );
         }
         String operation = args[0];
-        if(! availableOperations.contains(operation){
+        if(! availableOperations.contains(operation)){
            throw new Exception(
                    "No such operation available: " + operation
            );
