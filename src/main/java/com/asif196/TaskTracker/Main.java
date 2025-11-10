@@ -5,6 +5,7 @@ package com.asif196.TaskTracker;
 public class Main {
     public static void main(String[] args) {
         Operations operations = new Operations();
-        operations.add_task("Learn Java");
+        operations.markTask(4, "in-progress");
+        operations.listTasks();
     }
 }

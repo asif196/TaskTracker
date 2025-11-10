@@ -1,5 +1,8 @@
 package com.asif196.TaskTracker;
 
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -16,22 +19,31 @@ public class Task {
         allowedStatuses = new HashSet<>(Set.of("todo", "in-progress", "done"));
     }
 
+    @JsonGetter("description")
     public String getDescription() {
         return description;
     }
 
+
+    @JsonGetter("status")
     public String getStatus() {
         return status;
     }
 
+
+    @JsonGetter("updatedAt")
     public Date getUpdatedAt() {
         return updatedAt;
     }
 
+
+    @JsonGetter("createdAt")
     public Date getCreatedAt() {
         return createdAt;
     }
 
+
+    @JsonGetter("id")
     public Integer getId() {
         return id;
     }
@@ -57,6 +69,8 @@ public class Task {
         this.updatedAt = updatedAt;
     }
 
+    public Task(){
+    }
 
     public Task(Integer id, String description){
        this.id = id;
@@ -69,10 +83,11 @@ public class Task {
 
 
     public void display(){
-        System.out.println(id.toString());
-        System.out.println(description);
-        System.out.println(status);
-        System.out.println(createdAt.toString());
-        System.out.println(updatedAt.toString());
+        System.out.println("---------TASK DETAILS--------");
+        System.out.println("id: " + id.toString());
+        System.out.println("description: " + description);
+        System.out.println("status: " + status);
+        System.out.println("createdAt: " + createdAt.toString());
+        System.out.println("updatedAt: " + updatedAt.toString());
     }
 }
