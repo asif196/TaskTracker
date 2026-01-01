@@ -4,8 +4,11 @@ package com.asif196.TaskTracker;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Operations operations = new Operations();
-        operations.markTask(4, "in-progress");
-        operations.listTasks();
+        try {
+            Utils.validateArguments(args);
+            Utils.callOperations(args);
+        } catch (RuntimeException e) {
+           System.out.printf("Unexpected exception occurred: %s%n", e);
+        }
     }
 }

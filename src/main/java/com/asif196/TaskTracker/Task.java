@@ -48,8 +48,13 @@ public class Task {
         return id;
     }
 
+    private void updateTimestamp(){
+        this.updatedAt = new Date();
+    }
+
     public void setDescription(String description) {
         this.description = description;
+        updateTimestamp();
     }
 
     public void setStatus(String status) {
@@ -59,6 +64,7 @@ public class Task {
             );
         }
         this.status = status;
+        updateTimestamp();
     }
 
     public void setCreatedAt(Date createdAt) {
